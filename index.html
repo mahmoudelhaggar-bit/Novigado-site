@@ -12,184 +12,28 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Readex+Pro:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-<style>
-:root{--ink:#13261D;--green:#0B5D3B;--teal:#0E8C7F;--teal2:#0A6E64;--gold:#C8963E;--gold2:#8A5F1C;--sand:#F6F0E4;--sand2:#EAE1CF;--muted:#5B6B62;--hair:#D8CCB4;--white:#fff}
-*{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth}
-body{font-family:"Readex Pro",system-ui,sans-serif;background:var(--sand);color:var(--ink);line-height:1.6;font-size:17px}
-a{color:inherit}
-img{max-width:100%;display:block}
-.wrap{max-width:1160px;margin:0 auto;padding:0 24px}
-header{position:sticky;top:0;z-index:20;background:rgba(246,240,228,.94);backdrop-filter:blur(8px);border-bottom:1px solid var(--hair)}
-.nav{display:flex;align-items:center;justify-content:space-between;height:72px;gap:16px}
-.nav img{height:40px;width:auto}
-.nav nav{display:flex;gap:26px;font-size:15px}
-.nav nav a{text-decoration:none;color:var(--muted)}
-.nav nav a:hover{color:var(--green)}
-.nav .right{display:flex;gap:12px;align-items:center}
-.lang{border:1px solid var(--hair);background:var(--white);border-radius:999px;padding:7px 14px;font:inherit;font-size:14px;cursor:pointer;color:var(--ink)}
-.btn{display:inline-block;background:var(--green);color:var(--white);text-decoration:none;padding:12px 22px;border-radius:999px;font-weight:500;font-size:15px;border:0}
-.btn.gold{background:var(--gold);color:var(--ink)}
-.btn.ghost{background:transparent;border:1px solid rgba(255,255,255,.4);color:var(--white)}
-.kicker{font-size:13px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--gold2);margin-bottom:12px}
-[dir=rtl] .kicker{letter-spacing:0}
-h1{font-size:clamp(36px,5vw,58px);line-height:1.1;font-weight:700}
-h2{font-size:clamp(28px,3.4vw,40px);line-height:1.2;font-weight:600;max-width:820px}
-h3{font-size:20px;font-weight:600;color:var(--green);margin-bottom:6px}
-section{padding:88px 0}
-.lead{font-size:19px;color:var(--muted);max-width:720px;margin-top:16px}
-.hero{background:var(--ink);color:var(--white);padding:96px 0 104px;position:relative;overflow:hidden}
-.hero .grid{display:grid;grid-template-columns:1.15fr .85fr;gap:56px;align-items:center}
-.hero .kicker{color:var(--gold)}
-.hero p{color:var(--sand2);font-size:20px;margin:22px 0 32px;max-width:560px}
-.hero .ctas{display:flex;gap:12px;flex-wrap:wrap}
-.hero figure img{border:6px solid var(--gold)}
-.hero figcaption{font-size:13px;color:#B9BFB4;margin-top:10px}
-.hero .mark{position:absolute;inset-inline-end:-120px;top:-60px;width:520px;opacity:.06;pointer-events:none}
-.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:40px}
-.stat{background:var(--white);border:1px solid var(--hair);padding:26px 24px;border-top:4px solid var(--green)}
-.stat.dark{background:var(--ink);color:var(--white);border-color:var(--ink);border-top-color:var(--gold)}
-.stat b{display:block;font-size:40px;line-height:1.1;font-weight:700;color:var(--green)}
-.stat.dark b{color:var(--gold)}
-.stat span{display:block;margin-top:10px;font-size:16px}
-.stat small{display:block;margin-top:14px;font-size:12px;color:var(--muted);font-style:italic}
-.stat.dark small{color:#B9BFB4}
-.band{background:var(--green);color:var(--white);padding:22px 28px;margin-top:28px;font-size:18px}
-.band b{color:var(--gold)}
-.split{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center}
-.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:40px}
-.card{background:var(--white);border:1px solid var(--hair);padding:26px;border-inline-start:4px solid var(--green)}
-.card:nth-child(3n+2){border-inline-start-color:var(--gold)}
-.card:nth-child(3n){border-inline-start-color:var(--teal)}
-.card p{color:var(--muted);font-size:16px}
-.alt{background:var(--white)}
-.photos{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
-.photos img{aspect-ratio:4/5;object-fit:cover;width:100%}
-.photos figcaption{font-size:13px;color:var(--muted);margin-top:6px}
-.proof{display:grid;grid-template-columns:1fr 1fr;gap:14px}
-.proof .stat b{font-size:32px}
-table{width:100%;border-collapse:collapse;margin-top:36px;background:var(--white);font-size:16px}
-th,td{padding:14px 16px;border:1px solid var(--hair);text-align:center}
-th{background:var(--ink);color:var(--white);font-weight:500}
-th.us{background:var(--green)}
-td:first-child,th:first-child{text-align:start;font-weight:500}
-td.us{background:#E3EFE8;color:var(--green);font-weight:600}
-.dot{display:inline-block;width:16px;height:16px;border-radius:50%;vertical-align:middle}.dot.y{background:var(--green)}.dot.n{border:2px solid #B9BFB4}.dot.p{border:2px solid var(--gold2);background:linear-gradient(90deg,var(--gold2) 50%,transparent 50%)}
-.legend{font-size:14px;color:var(--muted);margin-top:10px}
-.road{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:44px;position:relative}
-.step{background:var(--white);border:1px solid var(--hair);padding:28px 24px}
-.step.now{background:var(--green);color:var(--white);border-color:var(--green)}
-.step .ph{font-size:12px;font-weight:600;letter-spacing:.14em;color:var(--gold2)}
-.step.now .ph{color:var(--gold)}
-.step h3{margin-top:8px}.step.now h3{color:var(--white)}
-.step p{font-size:15.5px;color:var(--muted)}.step.now p{color:var(--sand2)}
-.team{display:grid;grid-template-columns:1.1fr 1fr;gap:24px;margin-top:40px}
-.advisor{background:var(--white);border:1px solid var(--hair);border-top:5px solid var(--gold);padding:30px}
-.advisor .head{display:flex;gap:22px;align-items:center;margin-bottom:18px}
-.advisor img{width:132px;height:132px;border-radius:50%;object-fit:cover;flex:none}
-.role{font-size:12px;font-weight:600;letter-spacing:.14em;color:var(--gold2);text-transform:uppercase}
-[dir=rtl] .role{letter-spacing:0}
-.advisor .name{font-size:24px;font-weight:600;color:var(--green)}
-.lines p{font-size:15.5px;color:var(--ink);margin:6px 0}
-.people{display:grid;gap:14px}
-.person{display:flex;gap:18px;align-items:center;background:var(--white);border:1px solid var(--hair);border-inline-start:4px solid var(--green);padding:18px 20px}
-.person img{width:92px;height:92px;border-radius:50%;object-fit:cover;flex:none}
-.person .name{font-size:19px;font-weight:600;color:var(--green)}
-.person .title{font-size:14px;font-weight:600;color:var(--gold2)}
-.person .lines p{font-size:14px;color:var(--muted);margin:2px 0}
-.dark{background:var(--ink);color:var(--white)}
-.dark h2{color:var(--white)}
-.dark .kicker{color:var(--gold)}
-.partners{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:40px}
-.partner{border:1px solid var(--gold);background:#1C3329;padding:28px 24px}
-.partner .num{font-size:30px;font-weight:700;color:var(--gold)}
-.partner h3{color:var(--white);margin-top:6px}
-.partner p{color:var(--sand2);font-size:15.5px}
-.contact{display:grid;grid-template-columns:1fr 1fr;gap:48px;margin-top:48px;align-items:start}
-.contact .box{background:var(--gold);color:var(--ink);padding:32px}
-.contact .box h3{color:var(--ink);font-size:22px}
-.contact .box a{display:block;font-size:18px;margin-top:10px;text-decoration:none;font-weight:500}
-.contact .box .who{font-weight:600;margin-bottom:6px}
-.vm{display:grid;grid-template-columns:1fr 1.2fr;gap:20px;margin-top:40px}
-.vm .v{background:var(--white);border:1px solid var(--hair);border-top:5px solid var(--gold);padding:30px}
-.vm .m{background:var(--ink);color:var(--white);padding:30px}
-.vm .lab{font-size:13px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--gold2);margin-bottom:10px}
-.vm .m .lab{color:var(--gold)}
-.vm .v p{font-size:22px;line-height:1.45;font-weight:600;color:var(--green)}
-.vm .m p{font-size:17px;color:var(--sand2)}
-.crr{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:20px}
-.crr div{border-top:4px solid var(--green);padding-top:12px}
-.crr div:nth-child(2){border-top-color:var(--teal)}.crr div:nth-child(3){border-top-color:var(--gold)}
-.crr b{font-size:20px;display:block}.crr span{color:var(--muted);font-size:15.5px}
-.values{margin-top:36px;border-top:1px solid var(--ink)}
-.values .row{display:grid;grid-template-columns:200px 1fr;gap:20px;padding:14px 0;border-bottom:1px solid var(--hair)}
-.values b{color:var(--green);font-size:18px}
-.namebox{background:var(--sand2);padding:22px 26px;margin-top:28px;font-size:16px}
-.lines4{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:36px}
-.line{background:var(--white);border:1px solid var(--hair);padding:24px}
-.line.first{background:var(--green);color:var(--white);border-color:var(--green)}
-.line .tag{font-size:11.5px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
-.line.first .tag{color:var(--gold)}
-.line h3{margin-top:6px}.line.first h3{color:var(--white)}
-.line p{font-size:15.5px;color:var(--muted)}.line.first p{color:var(--sand2)}
-.agenda{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:28px}
-.agenda div{border-top:2px solid var(--green);padding-top:10px}
-.agenda b{display:block}.agenda span{font-size:15px;color:var(--muted)}
-.pgrid{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-top:40px}
-.pcard{background:var(--white);border:1px solid var(--hair);border-top:5px solid var(--green);padding:30px;display:flex;flex-direction:column;gap:12px}
-.pcard:nth-child(2){border-top-color:var(--gold)}
-.pcard .pname{font-size:26px;font-weight:700;color:var(--green)}
-.pcard .pmeta{font-size:13px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--gold2)}
-[dir=rtl] .pcard .pmeta,[dir=rtl] .line .tag,[dir=rtl] .vm .lab{letter-spacing:0}
-.pcard p{color:var(--ink);font-size:16px}
-.pcard ul{list-style:none;display:grid;gap:8px}
-.pcard li{padding-inline-start:18px;position:relative;font-size:15.5px;color:var(--muted)}
-.pcard li:before{content:"";position:absolute;inset-inline-start:0;top:.62em;width:8px;height:8px;background:var(--gold);transform:rotate(45deg)}
-.pcard a{color:var(--green);font-weight:500;font-size:15px}
-@media (max-width:900px){.vm,.pgrid{grid-template-columns:1fr}.lines4,.agenda{grid-template-columns:1fr 1fr}}
-@media (max-width:560px){.lines4,.agenda,.crr{grid-template-columns:1fr}.values .row{grid-template-columns:1fr;gap:4px}}
-footer{background:#0D1B14;color:#B9BFB4;padding:28px 0;font-size:14px}
-footer .wrap{display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap}
-footer img{height:34px}
-[lang=ar] body,[dir=rtl] body{font-size:17.5px}
-@media (max-width:900px){
-  .nav nav{display:none}
-  .hero .grid,.split,.team,.contact{grid-template-columns:1fr}
-  .stats,.partners,.road{grid-template-columns:1fr 1fr}
-  .cards{grid-template-columns:1fr 1fr}
-  section{padding:64px 0}
-}
-@media (max-width:560px){
-  .wrap{padding:0 16px}
-  .stats,.partners,.road,.cards,.proof{grid-template-columns:1fr}
-  .stat b{font-size:34px}
-  .nav .btn{display:none}
-  table{font-size:13px}th,td{padding:9px 6px}
-  .tablewrap{overflow-x:auto}
-  .advisor .head{flex-direction:column;align-items:flex-start}
-}
-</style>
+<link rel="stylesheet" href="/style.css">
 </head>
 <body>
 <header>
   <div class="wrap nav">
-    <a href="#top" aria-label="Novigado"><img src="/logo.svg" alt="Novigado نوفيغادو"></a>
+    <a href="/" aria-label="Novigado home"><img src="/logo.svg" alt="Novigado نوفيغادو"></a>
     <nav>
-      <a href="#about" data-i="nav0">About</a>
-      <a href="#solution" data-i="nav2">Solution</a>
-      <a href="#impact" data-i="nav3">Impact</a>
-      <a href="#partnerships" data-i="nav6">Partnerships</a>
-      <a href="#team" data-i="nav4">Team</a>
-      <a href="#contact" data-i="nav5">Contact</a>
+      <a href="/about.html" data-i="nav0">About</a>
+      <a href="/solution.html" data-i="nav2">Solution</a>
+      <a href="/impact.html" data-i="nav3">Impact</a>
+      <a href="/partnerships.html" data-i="nav6">Partnerships</a>
+      <a href="/team.html" data-i="nav4">Team</a>
+      <a href="/contact.html" data-i="nav5">Contact</a>
     </nav>
     <div class="right">
+      <button class="navtoggle" id="navtoggle" data-i="menu">Menu</button>
       <button class="lang" id="lang" aria-label="Switch language">العربية</button>
-      <a class="btn" href="#contact" data-i="cta">Contact us</a>
+      <a class="btn" href="/contact.html" data-i="cta">Contact us</a>
     </div>
   </div>
 </header>
-
-<main id="top">
+<main>
 <section class="hero">
   <img class="mark" src="/favicon.svg" alt="">
   <div class="wrap grid">
@@ -197,41 +41,12 @@ footer img{height:34px}
       <div class="kicker" data-i="h_k">Waste becomes worth · Riyadh</div>
       <h1 data-i="h_t">Turning plastic waste into durable infrastructure</h1>
       <p data-i="h_p">Composite manhole covers made from unrecyclable plastic: corrosion-free, lightweight and made in Saudi Arabia.</p>
-      <div class="ctas"><a class="btn gold" href="#solution" data-i="h_b1">See our solution</a><a class="btn ghost" href="#contact" data-i="h_b2">Get in touch</a></div>
+      <div class="ctas"><a class="btn gold" href="/solution.html" data-i="h_b1">See our solution</a><a class="btn ghost" href="/contact.html" data-i="h_b2">Get in touch</a></div>
     </div>
     <figure><img src="/cover.jpg" alt="Manhole cover moulded from plastic rejects"><figcaption data-i="h_cap">Cover moulded from plastic rejects (research sample)</figcaption></figure>
   </div>
 </section>
-
-<section id="about">
-  <div class="wrap">
-    <div class="kicker" data-i="ab_k">Who we are</div>
-    <h2 data-i="ab_t">Saudi Arabia pays twice for every tonne it throws away. We're here to end that.</h2>
-    <div class="split" style="margin-top:24px;align-items:start">
-      <p class="lead" style="margin-top:0" data-i="ab_p1">Most of the Kingdom's recyclable materials still end up in landfill: resources the country has already paid for once, and pays for again as imports. Novigado exists to stop that loss. We recover plastic waste and manufacture finished products that go straight back into the Saudi economy.</p>
-      <p class="lead" style="margin-top:0" data-i="ab_p2">We turn national targets into industrial capacity on the ground. Our Riyadh plant is the first step. Further waste streams, energy recovery, environmental advisory and community programmes follow, all under one name and one standard.</p>
-    </div>
-    <div class="vm">
-      <div class="v"><div class="lab" data-i="vi_l">Our vision</div><p data-i="vi">A Kingdom where nothing is wasted, where every resource returns as value for people, industry and nature.</p></div>
-      <div class="m"><div class="lab" data-i="mi_l">Our mission</div><p data-i="mi">To build Saudi Arabia's circular economy from Riyadh outward, turning plastic and other waste streams into certified, high-quality raw materials and finished end products through modern local manufacturing, Saudi talent, and partnerships with government, industry and communities, in support of Saudi Vision 2030 and the Saudi Green Initiative.</p></div>
-    </div>
-    <div class="crr">
-      <div><b data-i="c1t">Collect</b><span data-i="c1">Recover waste before it reaches landfill.</span></div>
-      <div><b data-i="c2t">Renew</b><span data-i="c2">Process it into certified raw materials.</span></div>
-      <div><b data-i="c3t">Return</b><span data-i="c3">Manufacture products for the Saudi market.</span></div>
-    </div>
-    <div class="values">
-      <div class="row"><b data-i="va1t">Stewardship</b><span data-i="va1">We treat the land and its resources as a trust, to be handed on in better condition.</span></div>
-      <div class="row"><b data-i="va2t">Integrity</b><span data-i="va2">Traceable volumes, audited quality and transparent reporting to regulators and partners.</span></div>
-      <div class="row"><b data-i="va3t">Saudi talent</b><span data-i="va3">We build careers for Saudi engineers, technicians and operators.</span></div>
-      <div class="row"><b data-i="va4t">Partnership</b><span data-i="va4">We work alongside government, industry and households; no one closes the loop alone.</span></div>
-      <div class="row"><b data-i="va5t">Innovation</b><span data-i="va5">We adopt proven technology first, then improve it for Saudi conditions.</span></div>
-    </div>
-    <div class="namebox" data-i="nm"><b>Novigado</b> means <em>renewal</em>, from the Esperanto <em>novigi</em>, "to make new". Our mark joins three facets into one rising triangle, inspired by the Najdi architecture of Riyadh: <b>collect, renew, return</b>.</div>
-  </div>
-</section>
-
-<section id="problem" class="alt">
+<section class="alt" id="problem">
   <div class="wrap">
     <div class="kicker" data-i="p_k">The problem</div>
     <h2 data-i="p_t">Over 400 million tonnes of plastic are produced each year; less than 10% is recycled</h2>
@@ -250,288 +65,22 @@ footer img{height:34px}
     </div>
   </div>
 </section>
-
-<section id="solution">
-  <div class="wrap">
-    <div class="split">
-      <div>
-        <div class="kicker" data-i="s_k">Our solution</div>
-        <h2 data-i="s_t">Composite manhole covers made from unrecyclable plastic, produced in Riyadh</h2>
-        <p class="lead" data-i="s_p">We combine contaminated plastic that recyclers reject with mineral filler and steel reinforcement to make covers that last longer, weigh less and never rust.</p>
-      </div>
-      <img src="/rejects.jpg" alt="Mixed plastic rejects">
-    </div>
-    <div class="cards">
-      <div class="card"><h3 data-i="v1t">Corrosion-free</h3><p data-i="v1">Does not rust or crack in acidic sewer environments, for a longer service life.</p></div>
-      <div class="card"><h3 data-i="v2t">Lightweight</h3><p data-i="v2">A fraction of the weight of iron: easier to install and safer to lift.</p></div>
-      <div class="card"><h3 data-i="v3t">Made from waste</h3><p data-i="v3">Uses plastic rejects without washing, plus industrial foundry sand.</p></div>
-      <div class="card"><h3 data-i="v4t">Made in Saudi Arabia</h3><p data-i="v4">Local stock, short lead times and eligibility for local-content preference.</p></div>
-      <div class="card"><h3 data-i="v5t">Built to EN 124</h3><p data-i="v5">Designed for classes A15 and B125: footways, verges and car parks.</p></div>
-      <div class="card"><h3 data-i="v6t">No scrap value</h3><p data-i="v6">Low theft risk and lower replacement cost over its life.</p></div>
-    </div>
-  </div>
-</section>
-
-<section id="proof" class="alt">
-  <div class="wrap">
-    <div class="kicker" data-i="r_k">Proven by research</div>
-    <h2 data-i="r_t">Performance validated through applied research at the American University in Cairo</h2>
-    <div class="split" style="margin-top:40px;align-items:start">
-      <div class="photos">
-        <figure><img src="/paste.jpg" alt=""><figcaption data-i="r_c1">Composite paste</figcaption></figure>
-        <figure><img src="/press.jpg" alt=""><figcaption data-i="r_c2">Compression moulding</figcaption></figure>
-        <figure><img src="/test.jpg" alt=""><figcaption data-i="r_c3">Full-cover load test</figcaption></figure>
-      </div>
-      <div class="proof">
-        <div class="stat"><b dir="ltr">108 kN</b><span data-i="r1">best test cover, above the Grade B reference for 30 cm ductile-iron covers</span></div>
-        <div class="stat"><b dir="ltr">0.000 mg/L</b><span data-i="r2">heavy-metal leachate: safe for soil and water</span></div>
-        <div class="stat"><b data-i="r3t">No change</b><span data-i="r3">after a week in acid at pH 3, similar to sewage</span></div>
-        <div class="stat"><b dir="ltr">80%</b><span data-i="r4">of the optimum mix is plastic rejects</span></div>
-      </div>
-    </div>
-    <div class="band" data-i="r_band"><b>Next:</b> full-size 600 mm covers type-tested to EN 124 at an accredited laboratory.</div>
-  </div>
-</section>
-
 <section>
   <div class="wrap">
-    <div class="kicker" data-i="d_k">How we are different</div>
-    <h2 data-i="d_t">A clear advantage over cast iron, concrete and imported composite covers</h2>
-    <div class="tablewrap"><table>
-      <thead><tr><th data-i="d_h0">What buyers need</th><th data-i="d_h1">Cast / ductile iron</th><th data-i="d_h2">Concrete</th><th data-i="d_h3">Imported composite</th><th class="us">Novigado</th></tr></thead>
-      <tbody>
-        <tr><td data-i="d1">Does not corrode in sewer environments</td><td><i class="dot n"></i></td><td><i class="dot p"></i></td><td><i class="dot y"></i></td><td class="us"><i class="dot y"></i></td></tr>
-        <tr><td data-i="d2">Light enough for two people</td><td><i class="dot n"></i></td><td><i class="dot n"></i></td><td><i class="dot y"></i></td><td class="us"><i class="dot y"></i></td></tr>
-        <tr><td data-i="d3">Made from waste</td><td><i class="dot n"></i></td><td><i class="dot n"></i></td><td><i class="dot n"></i></td><td class="us"><i class="dot y"></i></td></tr>
-        <tr><td data-i="d4">Local stock and short lead time</td><td><i class="dot p"></i></td><td><i class="dot y"></i></td><td><i class="dot n"></i></td><td class="us"><i class="dot y"></i></td></tr>
-        <tr><td data-i="d5">Local-content price preference</td><td><i class="dot p"></i></td><td><i class="dot y"></i></td><td><i class="dot n"></i></td><td class="us"><i class="dot y"></i></td></tr>
-        <tr><td data-i="d6">No scrap value</td><td><i class="dot n"></i></td><td><i class="dot n"></i></td><td><i class="dot y"></i></td><td class="us"><i class="dot y"></i></td></tr>
-      </tbody>
-    </table></div>
-    <p class="legend"><i class="dot y"></i> <span data-i="d_l1">yes</span> &nbsp; <i class="dot p"></i> <span data-i="d_l2">partly</span> &nbsp; <i class="dot n"></i> <span data-i="d_l3">no</span></p>
-  </div>
-</section>
-
-<section id="lines" class="alt">
-  <div class="wrap">
-    <div class="kicker" data-i="bl_k">What we do</div>
-    <h2 data-i="bl_t">One brand, one standard, built in stages</h2>
-    <div class="lines4">
-      <div class="line first"><div class="tag" data-i="bl1g">Launching first</div><h3 data-i="bl1t">Novigado Infrastructure Products</h3><p data-i="bl1">Composite manhole covers from plastic rejects, made in Riyadh.</p></div>
-      <div class="line"><div class="tag" data-i="bl2g">Next phase</div><h3 data-i="bl2t">Novigado Recycling</h3><p data-i="bl2">Our own washing line turning plastic bales into flakes and pellets.</p></div>
-      <div class="line"><div class="tag" data-i="blxg">Expansion</div><h3 data-i="bl3t">Novigado Circular Solutions</h3><p data-i="bl3">Industrial, packaging and other recyclable waste streams for factories, retailers and municipalities.</p></div>
-      <div class="line"><div class="tag" data-i="blxg2">Expansion</div><h3 data-i="bl4t">Novigado Energy</h3><p data-i="bl4">Refuse-derived fuel and waste-to-energy partnerships for residues that cannot be recycled.</p></div>
-      <div class="line"><div class="tag" data-i="blxg3">Expansion</div><h3 data-i="bl5t">Novigado Advisory</h3><p data-i="bl5">ESG, waste-compliance and circularity consulting for public and private organisations.</p></div>
-      <div class="line"><div class="tag" data-i="blxg4">Expansion</div><h3 data-i="bl6t">Novigado Green</h3><p data-i="bl6">Community programmes, school and household awareness, and greening initiatives.</p></div>
-    </div>
-  </div>
-</section>
-
-<section id="impact">
-  <div class="wrap">
-    <div class="kicker" data-i="i_k">Our impact</div>
-    <h2 data-i="i_t">Every cover diverts plastic from landfill and supports Saudi circular-economy targets</h2>
-    <div class="stats">
-      <div class="stat"><b dir="ltr">~25 kg</b><span data-i="i1">of plastic waste kept out of landfill in every cover set</span></div>
-      <div class="stat"><b dir="ltr">325 t+</b><span data-i="i2">of plastic a year at full first-phase output</span></div>
-      <div class="stat"><b dir="ltr">2</b><span data-i="i3">waste streams reused: plastic rejects and foundry sand</span></div>
-      <div class="stat"><b dir="ltr">100%</b><span data-i="i4">Saudi-made, supporting local content and local jobs</span></div>
-    </div>
-    <div class="band" data-i="i_band"><b>Aligned with Vision 2030:</b> landfill diversion, the circular economy, local manufacturing and Saudi jobs.</div>
-  </div>
-</section>
-
-<section class="alt">
-  <div class="wrap">
-    <div class="kicker" data-i="m_k">Where we focus</div>
-    <h2 data-i="m_t">Off-road chambers, where composite covers outperform the alternatives</h2>
-    <div class="cards">
-      <div class="card"><h3 data-i="m1t">Telecom and fibre</h3><p data-i="m1">Chambers in footways and verges for fibre roll-outs.</p></div>
-      <div class="card"><h3 data-i="m2t">Irrigation and valves</h3><p data-i="m2">Parks, medians and landscaped areas.</p></div>
-      <div class="card"><h3 data-i="m3t">Compounds and car parks</h3><p data-i="m3">Light-traffic areas for developers and facility managers.</p></div>
-    </div>
-    <div class="road">
-      <div class="step now"><div class="ph" data-i="g1p">PHASE 1 · NOW</div><h3 data-i="g1t">Covers plant, Riyadh</h3><p data-i="g1">A lean plant making EN 124 covers for contractors and developers.</p></div>
-      <div class="step"><div class="ph" data-i="g2p">PHASE 2</div><h3 data-i="g2t">Scale covers</h3><p data-i="g2">More moulds and shifts; framework orders and local-content tenders.</p></div>
-      <div class="step"><div class="ph" data-i="g3p">PHASE 3</div><h3 data-i="g3t">Our own recycling line</h3><p data-i="g3">Turning plastic bales into flakes for our covers.</p></div>
-      <div class="step"><div class="ph" data-i="g4p">PHASE 4</div><h3 data-i="g4t">New products, new cities</h3><p data-i="g4">Plastic pallets; plants near demand in Jeddah and Madinah.</p></div>
-    </div>
-  </div>
-</section>
-
-<section id="partnerships">
-  <div class="wrap">
-    <div class="kicker" data-i="ps_k">Strategic and technology partners</div>
-    <h2 data-i="ps_t">Working with proven sustainability companies</h2>
-    <p class="lead" data-i="ps_p">Novigado builds on partners with a track record in waste management, recycling and sustainable materials.</p>
-    <div class="pgrid">
-      <div class="pcard">
-        <div class="pmeta" data-i="es_m">Strategic partner · Sustainable development · Egypt</div>
-        <img src="/ecostrategies.png" alt="EcoStrategies for Sustainable Development" style="height:46px;width:auto;align-self:flex-start">
-        <p data-i="es_p">EcoStrategies for Sustainable Development is the first sustainable development company approved by the Egyptian Government (Investment Authority). It works on sustainable buildings, sustainable communities, waste management and Net Zero, and researches new recycling technologies with The American University in Cairo.</p>
-        <ul>
-          <li data-i="es1">75–100% recycling rates achieved in Egypt, through recycling research with AUC</li>
-          <li data-i="es2">Co-founding member of the Egypt Green Building Council; co-released Tarsheed, Egypt's green building rating system, and Tarsheed Communities, the first community rating system built on Net Zero pollution</li>
-          <li data-i="es3">LEED projects include Credit Agricole (Platinum), Dar Al Handasah and The Mall of Egypt (Gold), Zewail City and the Magdi Yacoub Global Heart Center</li>
-          <li data-i="es4">Sustainable communities for Tatweer Misr (Monte Galala) and Al Ahly Real Estate (Odysia); Tarsheed projects for Banque Misr and Egypt Post</li>
-          <li data-i="es5">Also delivers Net Zero design, eco-industrial parks, environmental impact assessment, cleaner production and EDGE consulting</li>
-        </ul>
-        <a href="https://ecostrategies.co" target="_blank" rel="noopener">ecostrategies.co</a>
-      </div>
-      <div class="pcard">
-        <div class="pmeta" data-i="ag_m">Technology partner · Sustainable materials · Egypt</div>
-        <img src="/agrona.png" alt="Agrona" style="height:46px;width:auto;align-self:flex-start">
-        <p data-i="ag_p">Agrona, based in Cairo and Cologne, turns agricultural residues into high-performance wood panels using 100% bio-based resin and patent-pending composite technology, so no trees are cut and farmers gain a new source of income.</p>
-        <ul>
-          <li data-i="ag_1">1st place, JEC World Composites, Paris 2023: "the best sustainable composite technology"</li>
-          <li data-i="ag_2">1st place, MIT Startup Competition (2021); People's Choice Award, Global Social Venture Competition, UC Berkeley (2019); SXSW finalist (2020, 2021)</li>
-          <li data-i="ag_3">EOS-certified panels that surpass European particleboard classes P1 to P5, with no detectable formaldehyde</li>
-          <li data-i="ag_4">Every tonne of farm residue becomes 1 m³ of panels, saves about 3 trees and furnishes 20 school units; up to 30–50% cheaper than imported panels</li>
-          <li data-i="ag_5">Field projects with LG and WABAG; alumnus of the Circular Valley Accelerator, Germany (2024)</li>
-        </ul>
-        <a href="https://agrona.net" target="_blank" rel="noopener">agrona.net</a>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section id="team" class="alt">
-  <div class="wrap">
-    <div class="kicker" data-i="t_k">Our team</div>
-    <h2 data-i="t_t">An experienced industrial team, supported by a leading sustainability scientist</h2>
-    <div class="team">
-      <div class="advisor">
-        <div class="head"><img src="/haggar.jpg" alt="Prof. Salah El-Haggar">
-          <div><div class="role" data-i="a_role">Scientific Advisor</div><div class="name" data-i="a_name">Prof. Salah El-Haggar</div><div data-i="a_title" style="color:var(--muted);font-size:15px">Professor Emeritus of Energy and Sustainable Development, The American University in Cairo</div></div></div>
-        <div class="lines">
-          <p data-i="a1">Board Director, EcoStrategies for Sustainable Development</p>
-          <p data-i="a2">President, Egypt Green Building Council (Egypt GBC)</p>
-          <p data-i="a3">PhD, Washington State University; BSc and MSc in Mechanical Engineering, Ain Shams University</p>
-          <p data-i="a4">Author of Sustainable Industrial Design and Waste Management (Elsevier, 2007) and Sustainability and Innovation (AUC Press, 2015)</p>
-          <p data-i="a5">Led the research behind our cover formulation</p>
-        </div>
-      </div>
-      <div class="people">
-        <div class="person"><img src="/kafafy.jpg" alt="Mohamad El-Kafafy"><div><div class="name" data-i="k_name">Mohamad El-Kafafy</div><div class="title" data-i="k_title">Founder & Managing Partner</div><div class="lines"><p data-i="k1">18+ years in industrial engineering, manufacturing and operational excellence</p><p data-i="k2">Former leadership roles at General Motors and Amazon</p><p data-i="k3">MSc Industrial Engineering</p></div></div></div>
-        <div class="person"><img src="/mahmoud.jpg" alt="Mahmoud El-Haggar"><div><div class="name" data-i="e_name">Mahmoud El-Haggar</div><div class="title" data-i="co">Co-founder</div><div class="lines"><p data-i="e1">15+ years of industrial experience</p><p data-i="e2">Manufacturing Director, PowerLine Co.</p><p data-i="e3">BSc Mechanical Engineering (2010), The American University in Cairo</p></div></div></div>
-        <div class="person"><img src="/radwan.jpg" alt="Mohamed Radwan Behery"><div><div class="name" data-i="r_name">Mohamed Radwan Behery</div><div class="title" data-i="co2">Co-founder</div><div class="lines"><p data-i="w1">Production engineer in advanced composites manufacturing, Premier Composite Technologies, Dubai</p><p data-i="w2">MBA in Innovation and Entrepreneurship</p></div></div></div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section id="partners" class="dark">
-  <div class="wrap">
-    <div class="kicker" data-i="j_k">Work with us</div>
-    <h2 data-i="j_t">We are seeking partners to scale circular infrastructure in Saudi Arabia</h2>
-    <div class="partners">
-      <div class="partner"><div class="num">1</div><h3 data-i="j1t">Investors</h3><p data-i="j1">To launch our Riyadh plant and EN 124 certification.</p></div>
-      <div class="partner"><div class="num">2</div><h3 data-i="j2t">Pilot customers</h3><p data-i="j2">Municipalities, developers and contractors ready to trial covers on real sites.</p></div>
-      <div class="partner"><div class="num">3</div><h3 data-i="j3t">Recycling partners</h3><p data-i="j3">Suppliers of recycled plastic today, and partners for our own line tomorrow.</p></div>
-      <div class="partner"><div class="num">4</div><h3 data-i="j4t">Technical partners</h3><p data-i="j4">Accredited test labs, mould makers and machinery suppliers.</p></div>
-    </div>
-    <div id="contact" class="contact">
-      <div><h2 data-i="c_t">Let's talk</h2><p class="lead" style="color:var(--sand2)" data-i="c_p">Interested in partnering, piloting our covers or learning more? Contact us and we will share our full company profile.</p></div>
-      <div class="box">
-        <div class="who" data-i="c_who">Mohamad El-Kafafy, Founder & Managing Partner</div>
-        <a href="mailto:info@novigado-sa.com">info@novigado-sa.com</a>
-        <a href="tel:+966548569692" dir="ltr">+966 54 856 9692</a>
-        <a href="https://wa.me/966548569692" data-i="c_wa">WhatsApp</a>
-        <p style="margin-top:12px" data-i="c_loc">Riyadh, Kingdom of Saudi Arabia</p>
-      </div>
+    <div class="kicker" data-i="ex_k">Explore Novigado</div>
+    <h2 data-i="ex_t">Everything you need to know about us</h2>
+    <div class="explore">
+      <a href="/about.html"><b data-i="ex1t">About us</b><span data-i="ex1">Our vision, mission and values.</span><br><i data-i="more">Learn more →</i></a>
+      <a href="/solution.html"><b data-i="ex2t">Our solution</b><span data-i="ex2">Composite manhole covers and our business lines.</span><br><i data-i="more">Learn more →</i></a>
+      <a href="/impact.html"><b data-i="ex3t">Our impact</b><span data-i="ex3">Plastic diverted from landfill and local content.</span><br><i data-i="more">Learn more →</i></a>
+      <a href="/partnerships.html"><b data-i="ex4t">Partnerships</b><span data-i="ex4">Our strategic and technology partners.</span><br><i data-i="more">Learn more →</i></a>
+      <a href="/team.html"><b data-i="ex5t">Our team</b><span data-i="ex5">The team and our scientific advisor.</span><br><i data-i="more">Learn more →</i></a>
+      <a href="/contact.html"><b data-i="ex6t">Contact us</b><span data-i="ex6">Let's talk about partnering or piloting.</span><br><i data-i="more">Learn more →</i></a>
     </div>
   </div>
 </section>
 </main>
-
 <footer><div class="wrap"><img src="/logo-white.svg" alt="Novigado"><span data-i="f">© 2026 Novigado · Waste becomes worth</span></div></footer>
-
-<script>
-const AR = {
-nav0:"من نحن",nav6:"الشراكات",nav1:"المشكلة",nav2:"الحل",nav3:"الأثر",nav4:"الفريق",nav5:"تواصل معنا",cta:"تواصل معنا",
-h_k:"من الهدر إلى القيمة · الرياض",h_t:"نحوّل نفايات البلاستيك إلى بنية تحتية تدوم",
-h_p:"أغطية مناهل مركّبة مصنوعة من البلاستيك غير القابل لإعادة التدوير: مقاومة للتآكل، خفيفة الوزن، وصُنعت في المملكة العربية السعودية.",
-h_b1:"تعرّف على حلّنا",h_b2:"تواصل معنا",h_cap:"غطاء مصبوب من مرفوضات البلاستيك (عيّنة بحثية)",
-p_k:"المشكلة",p_t:"يُنتج العالم أكثر من 400 مليون طن من البلاستيك سنويًا، ولا يُعاد تدوير إلا أقل من 10% منه",
-p1:"من البلاستيك يُنتَج سنويًا حول العالم",p2:"فقط من نفايات البلاستيك يُعاد تدويرها، والباقي يُطمر أو يُحرق أو يتسرّب إلى البيئة",
-p3:"من النفايات في المملكة ما زالت تذهب إلى المرادم في 2024",p4:"المستهدف الوطني لتحويل النفايات عن المرادم بحلول 2040",
-p_band:"<b>الفرصة:</b> تحويل البلاستيك غير القابل لإعادة التدوير إلى منتجات بنية تحتية طويلة العمر، تُصنع في المملكة.",
-s_k:"حلّنا",s_t:"أغطية مناهل مركّبة من البلاستيك غير القابل لإعادة التدوير، تُنتج في الرياض",
-s_p:"نمزج البلاستيك الملوّث الذي ترفضه مصانع التدوير مع حشوة معدنية وتسليح فولاذي لنصنع أغطية تدوم أطول، وأخف وزنًا، ولا تصدأ أبدًا.",
-v1t:"مقاوم للتآكل",v1:"لا يصدأ ولا يتشقق في بيئات الصرف الحمضية، فيدوم لفترة أطول.",
-v2t:"خفيف الوزن",v2:"جزء بسيط من وزن الحديد: أسهل في التركيب وأكثر أمانًا في الرفع.",
-v3t:"مصنوع من النفايات",v3:"يستخدم مرفوضات البلاستيك دون غسيل، إضافة إلى رمل المسابك الصناعي.",
-v4t:"صُنع في السعودية",v4:"مخزون محلي، ومدد توريد قصيرة، وأهلية لأفضلية المحتوى المحلي.",
-v5t:"وفق المواصفة EN 124",v5:"مصمَّم للفئتين A15 وB125: الأرصفة والجوانب ومواقف السيارات.",
-v6t:"بلا قيمة خردة",v6:"مخاطر سرقة منخفضة وتكلفة استبدال أقل على مدى عمره.",
-r_k:"مثبت بالبحث العلمي",r_t:"أداء تم التحقق منه عبر بحث تطبيقي في الجامعة الأمريكية بالقاهرة",
-r_c1:"عجينة المادة المركّبة",r_c2:"الكبس في القالب",r_c3:"اختبار التحميل على الغطاء كاملًا",
-r1:"أفضل غطاء مُختبر، أعلى من مرجع الفئة B لأغطية الحديد المرن بقطر 30 سم",r2:"تسرّب المعادن الثقيلة: آمن للتربة والمياه",
-r3t:"لا تغيّر",r3:"بعد أسبوع في حمض بدرجة pH 3، مماثلة لمياه الصرف",r4:"من الخلطة المثلى مرفوضات بلاستيك",
-r_band:"<b>الخطوة التالية:</b> اختبار أغطية بالمقاس الكامل 600 مم وفق EN 124 في مختبر معتمد.",
-d_k:"ما يميّزنا",d_t:"تفوّق واضح على أغطية الحديد الزهر والخرسانة والأغطية المركّبة المستوردة",
-d_h0:"ما يحتاجه المشتري",d_h1:"حديد زهر / مرن",d_h2:"خرسانة",d_h3:"مركّب مستورد",
-d1:"لا يتآكل في بيئات الصرف",d2:"خفيف يحمله شخصان",d3:"مصنوع من النفايات",d4:"مخزون محلي ومدة توريد قصيرة",d5:"أفضلية المحتوى المحلي في التسعير",d6:"بلا قيمة خردة",
-d_l1:"نعم",d_l2:"جزئيًا",d_l3:"لا",
-i_k:"أثرنا",i_t:"كل غطاء يحوّل البلاستيك عن المرادم ويدعم مستهدفات الاقتصاد الدائري في المملكة",
-i1:"من نفايات البلاستيك تُحوَّل عن المرادم في كل غطاء",i2:"من البلاستيك سنويًا عند الطاقة الكاملة للمرحلة الأولى",i3:"تيّاران من النفايات يُعاد استخدامهما: مرفوضات البلاستيك ورمل المسابك",i4:"صناعة سعودية تدعم المحتوى المحلي والوظائف المحلية",
-i_band:"<b>متوافق مع رؤية 2030:</b> تحويل النفايات عن المرادم، والاقتصاد الدائري، والتصنيع المحلي، ووظائف للسعوديين.",
-m_k:"مجال تركيزنا",m_t:"غرف التفتيش خارج الطرق، حيث تتفوّق الأغطية المركّبة على البدائل",
-m1t:"الاتصالات والألياف",m1:"غرف في الأرصفة والجوانب لمشاريع الألياف الضوئية.",m2t:"الري والصمامات",m2:"الحدائق والجزر الوسطية والمسطحات الخضراء.",m3t:"المجمّعات ومواقف السيارات",m3:"مناطق حركة خفيفة للمطوّرين ومديري المرافق.",
-g1p:"المرحلة 1 · الآن",g1t:"مصنع الأغطية، الرياض",g1:"مصنع مرن يُنتج أغطية وفق EN 124 للمقاولين والمطوّرين.",
-g2p:"المرحلة 2",g2t:"توسيع إنتاج الأغطية",g2:"قوالب وورديات إضافية؛ عقود إطارية ومناقصات المحتوى المحلي.",
-g3p:"المرحلة 3",g3t:"خط التدوير الخاص بنا",g3:"تحويل بالات البلاستيك إلى رقائق لأغطيتنا.",
-g4p:"المرحلة 4",g4t:"منتجات جديدة ومدن جديدة",g4:"منصّات نقل بلاستيكية؛ ومصانع قريبة من الطلب في جدة والمدينة المنورة.",
-t_k:"فريقنا",t_t:"فريق صناعي ذو خبرة، يدعمه عالم رائد في الاستدامة",
-a_role:"المستشار العلمي",a_name:"أ.د. صلاح الحجار",a_title:"أستاذ فخري للطاقة والتنمية المستدامة، الجامعة الأمريكية بالقاهرة",
-a1:"عضو مجلس إدارة، EcoStrategies للتنمية المستدامة",a2:"رئيس المجلس المصري للأبنية الخضراء",a3:"دكتوراه من جامعة ولاية واشنطن؛ بكالوريوس وماجستير الهندسة الميكانيكية من جامعة عين شمس",
-a4:"مؤلف كتاب «Sustainable Industrial Design and Waste Management» (Elsevier، 2007) وكتاب «Sustainability and Innovation» (مطبعة الجامعة الأمريكية، 2015)",a5:"قاد البحث الذي بُنيت عليه تركيبة أغطيتنا",
-k_name:"محمد الكفافي",k_title:"المؤسس والشريك المدير",k1:"أكثر من 18 عامًا في الهندسة الصناعية والتصنيع والتميّز التشغيلي",k2:"شغل مناصب قيادية سابقًا في جنرال موتورز وأمازون",k3:"ماجستير الهندسة الصناعية",
-e_name:"محمود الحجار",co:"شريك مؤسس",co2:"شريك مؤسس",e1:"أكثر من 15 عامًا من الخبرة الصناعية",e2:"مدير التصنيع، شركة باورلاين",e3:"بكالوريوس الهندسة الميكانيكية (2010)، الجامعة الأمريكية بالقاهرة",
-r_name:"محمد رضوان بحيري",w1:"مهندس إنتاج في تصنيع المواد المركّبة المتقدمة، Premier Composite Technologies، دبي",w2:"ماجستير إدارة الأعمال في الابتكار وريادة الأعمال",
-j_k:"اعمل معنا",j_t:"نبحث عن شركاء لتوسيع البنية التحتية الدائرية في المملكة العربية السعودية",
-j1t:"المستثمرون",j1:"لإطلاق مصنعنا في الرياض والحصول على شهادة EN 124.",j2t:"عملاء تجريبيون",j2:"البلديات والمطوّرون والمقاولون المستعدون لتجربة الأغطية في مواقع فعلية.",
-j3t:"شركاء التدوير",j3:"موردو البلاستيك المعاد تدويره اليوم، وشركاء خط التدوير الخاص بنا غدًا.",j4t:"شركاء تقنيون",j4:"مختبرات الاختبار المعتمدة وصانعو القوالب وموردو المعدات.",
-c_t:"لنتحدث",c_p:"مهتم بالشراكة أو تجربة أغطيتنا أو معرفة المزيد؟ تواصل معنا وسنشاركك ملف الشركة الكامل.",c_who:"محمد الكفافي، المؤسس والشريك المدير",c_wa:"واتساب",c_loc:"الرياض، المملكة العربية السعودية",
-f:"© 2026 نوفيغادو · من الهدر إلى القيمة",
-ab_k:"من نحن",ab_t:"المملكة تدفع ثمن كل طنٍّ تتخلّص منه مرّتين… ونحن هنا لننهي ذلك.",
-ab_p1:"ما زالت معظم المواد القابلة لإعادة التدوير في المملكة تنتهي في المرادم: موارد دفعت الدولة ثمنها مرة، وتدفعه مرة أخرى عند استيرادها. وُجدت نوفيغادو لإيقاف هذا الهدر، فنستعيد نفايات البلاستيك ونصنع منها منتجات نهائية تعود مباشرة إلى الاقتصاد السعودي.",
-ab_p2:"نحوّل المستهدفات الوطنية إلى طاقة صناعية على أرض الواقع. مصنعنا في الرياض هو الخطوة الأولى، وتتبعه تدفقات نفايات أخرى، واستعادة الطاقة، والاستشارات البيئية، والبرامج المجتمعية، تحت اسم واحد ومعيار واحد.",
-vi_l:"رؤيتنا",vi:"مملكةٌ لا يُهدَر فيها شيء؛ كلُّ موردٍ يعود قيمةً للإنسان والصناعة والطبيعة.",
-mi_l:"رسالتنا",mi:"نبني الاقتصاد الدائري في المملكة انطلاقًا من الرياض، بتحويل النفايات البلاستيكية وغيرها من تدفقات النفايات إلى مواد خام معتمدة عالية الجودة ومنتجات نهائية، عبر تصنيعٍ محلي حديث وكفاءاتٍ سعودية وشراكاتٍ مع الجهات الحكومية والقطاع الصناعي والمجتمع، دعمًا لمستهدفات رؤية السعودية 2030 ومبادرة السعودية الخضراء.",
-c1t:"نجمع",c1:"نستعيد النفايات قبل وصولها إلى المرادم.",c2t:"نجدّد",c2:"نعالجها لتصبح مواد خام معتمدة.",c3t:"نعيد",c3:"نصنع منها منتجات للسوق السعودية.",
-va1t:"الأمانة",va1:"نتعامل مع الأرض ومواردها كأمانة نسلّمها بحال أفضل.",va2t:"النزاهة",va2:"كميات قابلة للتتبّع، وجودة مدقّقة، وتقارير شفافة للجهات التنظيمية والشركاء.",
-va3t:"تمكين الكفاءات الوطنية",va3:"نبني مسارات مهنية للمهندسين والفنيين والمشغّلين السعوديين.",va4t:"الشراكة",va4:"نعمل جنبًا إلى جنب مع الحكومة والصناعة والأسر؛ فلا أحد يغلق الدائرة وحده.",
-va5t:"الابتكار",va5:"نعتمد التقنيات المثبتة أولًا، ثم نطوّرها لتناسب ظروف المملكة.",
-nm:"<b>نوفيغادو</b> تعني <em>التجدّد</em>، من الكلمة الإسبرانتية <em>novigi</em> أي «يجعله جديدًا». يجمع شعارنا ثلاثة أوجه في مثلث صاعد واحد مستوحى من العمارة النجدية في الرياض: <b>نجمع، نجدّد، نعيد</b>.",
-ag1t:"رؤية السعودية 2030",ag1:"صناعة محلية جديدة، وتنويع اقتصادي، ووظائف نوعية للمواطنين.",ag2t:"مبادرة السعودية الخضراء",ag2:"نفايات أقل في المرادم، وانبعاثات أقل، وبيئة أنظف في الرياض.",
-ag3t:"الإطار الوطني لإدارة النفايات",ag3:"عمليات مبنية وفق معايير المركز الوطني لإدارة النفايات (موان).",ag4t:"المحتوى المحلي",ag4:"مواد خام معاد تدويرها ومنتجات تُصنع في المملكة بدلًا من الاستيراد.",
-bl_k:"ماذا نقدّم",bl_t:"علامة واحدة ومعيار واحد، نبنيها على مراحل",
-bl1g:"الانطلاق أولًا",bl1t:"نوفيغادو لمنتجات البنية التحتية",bl1:"أغطية مناهل مركّبة من مرفوضات البلاستيك، تُصنع في الرياض.",
-bl2g:"المرحلة التالية",bl2t:"نوفيغادو لإعادة التدوير",bl2:"خط غسيل خاص بنا يحوّل بالات البلاستيك إلى رقائق وحبيبات.",
-blxg:"توسّع",blxg2:"توسّع",blxg3:"توسّع",blxg4:"توسّع",
-bl3t:"نوفيغادو للحلول الدائرية",bl3:"تدفقات النفايات الصناعية ونفايات التغليف وغيرها للمصانع وتجار التجزئة والبلديات.",
-bl4t:"نوفيغادو للطاقة",bl4:"وقود مشتق من النفايات وشراكات لتحويل النفايات إلى طاقة للمخلفات غير القابلة للتدوير.",
-bl5t:"نوفيغادو للاستشارات",bl5:"استشارات الحوكمة البيئية والاجتماعية والامتثال لأنظمة النفايات والاقتصاد الدائري للجهات العامة والخاصة.",
-bl6t:"نوفيغادو الخضراء",bl6:"برامج مجتمعية، وتوعية في المدارس والمنازل، ومبادرات تشجير.",
-ps_k:"الشركاء الاستراتيجيون والتقنيون",ps_t:"نعمل مع شركات استدامة ذات سجل حافل",ps_p:"تبني نوفيغادو على شركاء ذوي خبرة مثبتة في إدارة النفايات وإعادة التدوير والمواد المستدامة.",
-es_m:"شريك استراتيجي · تنمية مستدامة · مصر",es_p:"شركة EcoStrategies للتنمية المستدامة هي أول شركة تنمية مستدامة معتمدة من الحكومة المصرية (هيئة الاستثمار)، وتعمل في المباني والمجتمعات المستدامة وإدارة النفايات وصفر انبعاثات، وتجري أبحاثًا في تقنيات إعادة التدوير الحديثة بالتعاون مع الجامعة الأمريكية بالقاهرة.",
-es1:"معدلات إعادة تدوير بين 75% و100% في مصر، بفضل أبحاث التدوير مع الجامعة الأمريكية بالقاهرة",es2:"عضو مؤسس في المجلس المصري للأبنية الخضراء؛ شاركت في إطلاق «ترشيد»، نظام تقييم المباني الخضراء في مصر، و«ترشيد للمجتمعات»، أول نظام تقييم للمجتمعات قائم على مفهوم صفر تلوّث",es3:"من مشاريع LEED: كريدي أجريكول (بلاتيني)، ودار الهندسة ومول مصر (ذهبي)، ومدينة زويل، ومركز مجدي يعقوب العالمي للقلب",es5:"تقدّم أيضًا تصميم صفر انبعاثات، والمجمّعات الصناعية البيئية، وتقييم الأثر البيئي، والإنتاج الأنظف، واستشارات EDGE",es4:"مجتمعات مستدامة لتطوير مصر (مونت جلالة) والأهلي للتنمية العقارية (أوديسيا)؛ ومشاريع ترشيد لبنك مصر والبريد المصري",
-ag_m:"شريك تقني · مواد مستدامة · مصر",ag_p:"تتخذ Agrona من القاهرة وكولونيا مقرًّا لها، وتحوّل المخلفات الزراعية إلى ألواح خشبية عالية الأداء باستخدام راتنج حيوي بنسبة 100% وتقنية مواد مركّبة قيد براءة الاختراع، دون قطع الأشجار ومع توفير دخل جديد للمزارعين.",
-ag_1:"المركز الأول في معرض JEC World للمواد المركّبة، باريس 2023: «أفضل تقنية مستدامة للمواد المركّبة»",ag_2:"المركز الأول في مسابقة MIT للشركات الناشئة (2021)؛ وجائزة اختيار الجمهور في مسابقة المشاريع الاجتماعية العالمية بجامعة بيركلي (2019)؛ ونهائيات SXSW (2020 و2021)",ag_3:"ألواح معتمدة من الهيئة المصرية للمواصفات والجودة، تتجاوز فئات الألواح الأوروبية من P1 إلى P5، دون فورمالديهايد يُذكر",ag_5:"مشاريع ميدانية مع LG وWABAG؛ وخرّيجة مسرّعة Circular Valley في ألمانيا (2024)",ag_4:"كل طن من المخلفات الزراعية يصبح 1 م³ من الألواح، ويوفّر نحو 3 أشجار، ويكفي لتأثيث 20 وحدة مدرسية؛ وبتكلفة أقل من المستورد بنسبة 30–50%"
-};
-const EN = {}; document.querySelectorAll("[data-i]").forEach(e => EN[e.dataset.i] = e.innerHTML);
-function setLang(l){
-  const d = l === "ar" ? AR : EN;
-  document.querySelectorAll("[data-i]").forEach(e => { if (d[e.dataset.i] !== undefined) e.innerHTML = d[e.dataset.i]; });
-  document.documentElement.lang = l; document.documentElement.dir = l === "ar" ? "rtl" : "ltr";
-  document.getElementById("lang").textContent = l === "ar" ? "English" : "العربية";
-  try { localStorage.setItem("nv-lang", l); } catch (e) {}
-}
-document.getElementById("lang").addEventListener("click", () => setLang(document.documentElement.lang === "ar" ? "en" : "ar"));
-let saved = null; try { saved = localStorage.getItem("nv-lang"); } catch (e) {}
-const q = new URLSearchParams(location.search).get("lang");
-if (q === "ar" || q === "en") setLang(q); else if (saved) setLang(saved);
-</script>
+<script src="/site.js"></script>
 </body>
 </html>
